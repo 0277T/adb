@@ -44,8 +44,8 @@ btn.addEventListener('click',()=>{
     }
 
     var baseUrl = (window.location).href;
-    var url = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
-  
+ //   var url = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
+  var url = atob(window.location.hash.substr(1));
   
     $("#x1").val(url);
 const handleErr = ()=>{
